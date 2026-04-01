@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fuencisla Arias — Functional AI Specialist</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Courier+Prime&display=swap" rel="stylesheet">
+<title>Fuencisla Arias</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;500;600&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
@@ -13,10 +13,7 @@
   --text:#e6edf3;--muted:#8b949e;--border:#21262d;
   --tag-bg:rgba(0,212,255,0.08);--tag-border:rgba(0,212,255,0.25);
 }
-html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
-
-/* ========== FASE 1: ANTES ========== */
+body{font-family:'Nunito',sans-serif;font-weight:300;overflow-x:hidden;}
 #phase-before{
   min-height:100vh;background:#f5f5f0;
   display:flex;flex-direction:column;align-items:center;
@@ -26,7 +23,7 @@ body{font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
   background:#fff;max-width:680px;width:100%;
   padding:48px 52px;
   box-shadow:0 1px 4px rgba(0,0,0,0.1),0 4px 20px rgba(0,0,0,0.08);
-  font-family:'Courier Prime',monospace;position:relative;
+  font-family:'IBM Plex Mono',monospace;position:relative;
 }
 .before-paper::before{
   content:'';position:absolute;top:0;left:64px;
@@ -36,87 +33,55 @@ body{font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
   display:inline-block;background:#eee;color:#888;
   font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;
   padding:4px 10px;border-radius:2px;margin-bottom:20px;
-  font-family:'DM Sans',sans-serif;
+  font-family:'Nunito',sans-serif;
 }
-.before-name{
-  font-size:1.85rem;font-weight:700;font-family:Georgia,serif;
-  color:#111;border-bottom:2px solid #111;padding-bottom:8px;margin-bottom:4px;
-}
+.before-name{font-size:1.85rem;font-weight:700;font-family:Georgia,serif;color:#111;border-bottom:2px solid #111;padding-bottom:8px;margin-bottom:4px;}
 .before-role{font-size:0.82rem;color:#555;margin-bottom:18px;font-family:Georgia,serif;}
-.before-contact{
-  font-size:0.78rem;color:#333;line-height:2;
-  margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid #ddd;
-}
-.before-h{
-  font-size:0.72rem;font-weight:700;letter-spacing:0.12em;
-  text-transform:uppercase;color:#111;margin:18px 0 6px;font-family:Georgia,serif;
-}
+.before-contact{font-size:0.78rem;color:#333;line-height:2;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid #ddd;}
+.before-h{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#111;margin:18px 0 6px;font-family:Georgia,serif;}
 .before-jt{font-size:0.85rem;font-weight:700;color:#111;font-family:Georgia,serif;}
 .before-jm{font-size:0.75rem;color:#777;margin-bottom:3px;}
 .before-jd{font-size:0.76rem;color:#444;line-height:1.65;margin-bottom:12px;}
 .before-skills{font-size:0.78rem;color:#333;line-height:1.85;}
-
-/* BOTÓN */
 .btn-wrap{text-align:center;margin-top:32px;}
 .btn-transform{
   background:#111;color:#fff;border:none;
   padding:15px 40px;font-size:0.92rem;
-  font-family:'DM Sans',sans-serif;cursor:pointer;
-  letter-spacing:0.05em;position:relative;overflow:hidden;
-  transition:transform 0.2s,background 0.2s;
+  font-family:'Nunito',sans-serif;cursor:pointer;
+  letter-spacing:0.05em;transition:transform 0.2s,background 0.2s;
 }
 .btn-transform:hover{background:#222;transform:scale(1.02);}
-.btn-hint{font-size:0.7rem;color:#999;margin-top:10px;font-family:'DM Sans',sans-serif;}
-
-/* ========== GLITCH ========== */
-#glitch-overlay{
-  position:fixed;inset:0;z-index:999;
-  display:none;pointer-events:none;overflow:hidden;
-}
+.btn-hint{font-size:0.7rem;color:#999;margin-top:10px;font-family:'Nunito',sans-serif;}
+#glitch-overlay{position:fixed;inset:0;z-index:999;display:none;pointer-events:none;overflow:hidden;}
 #glitch-canvas{position:absolute;inset:0;width:100%;height:100%;}
 #glitch-text{
   position:absolute;top:50%;left:50%;
   transform:translate(-50%,-50%);
-  font-family:'DM Sans',sans-serif;
+  font-family:'Nunito',sans-serif;
   font-size:clamp(1rem,3vw,1.8rem);
   font-weight:500;color:#00d4ff;
-  letter-spacing:0.2em;text-align:center;
-  display:none;
+  letter-spacing:0.2em;text-align:center;display:none;
 }
-
-/* ========== FASE 2: DESPUÉS ========== */
 #phase-after{display:none;min-height:100vh;background:var(--bg);color:var(--text);}
 #phase-after::before{
   content:'';position:fixed;inset:0;
-  background-image:
-    linear-gradient(rgba(0,212,255,0.03) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,212,255,0.03) 1px,transparent 1px);
+  background-image:linear-gradient(rgba(0,212,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.03) 1px,transparent 1px);
   background-size:50px 50px;pointer-events:none;z-index:0;
 }
 .after-wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:48px 24px 80px;}
-
-/* HEADER */
 .after-header{
   display:grid;grid-template-columns:1fr auto;gap:24px;
   align-items:end;margin-bottom:36px;padding-bottom:28px;
   border-bottom:1px solid var(--border);
   opacity:0;animation:fadeUp 0.7s 0.1s ease forwards;
 }
-.after-name{
-  font-family:'DM Serif Display',serif;
-  font-size:clamp(2rem,5vw,3.4rem);
-  color:#fff;line-height:1.1;letter-spacing:-0.02em;
-}
+.after-name{font-family:'Libre Baskerville',serif;font-size:clamp(2rem,5vw,3.4rem);color:#fff;line-height:1.1;letter-spacing:-0.02em;}
 .after-name span{color:var(--accent);}
-.after-role{margin-top:8px;font-size:0.8rem;font-weight:500;
-  letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);}
+.after-role{margin-top:8px;font-size:0.8rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);}
 .after-role span{color:var(--accent);}
-.after-contact-block{display:flex;flex-direction:column;gap:7px;align-items:flex-end;}
+.after-cb{display:flex;flex-direction:column;gap:7px;align-items:flex-end;}
 .ci{display:flex;align-items:center;gap:8px;font-size:0.79rem;color:var(--muted);}
-.ci-ico{width:24px;height:24px;background:var(--surface2);border:1px solid var(--border);
-  border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;}
-
-/* HERO */
+.ci-ico{width:24px;height:24px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;}
 .after-hero{
   display:flex;align-items:center;gap:28px;margin-bottom:40px;
   background:var(--surface);border:1px solid var(--border);
@@ -124,120 +89,66 @@ body{font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
   opacity:0;animation:fadeUp 0.7s 0.25s ease forwards;
 }
 .hero-t{flex:1;}
-.hero-tagline{
-  font-family:'DM Serif Display',serif;
-  font-size:clamp(1rem,2.5vw,1.38rem);
-  color:#fff;line-height:1.45;margin-bottom:8px;
-}
+.hero-tagline{font-family:'Libre Baskerville',serif;font-size:clamp(1rem,2.5vw,1.38rem);color:#fff;line-height:1.45;margin-bottom:8px;}
 .hero-tagline em{color:var(--accent);font-style:normal;}
 .hero-sub{font-size:0.85rem;color:#8b949e;line-height:1.75;}
-
-/* CARDS GRID */
-.cards-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-  gap:14px;opacity:0;animation:fadeUp 0.7s 0.4s ease forwards;
-}
-.card{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:12px;padding:22px;cursor:pointer;
-  transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s;
-  position:relative;overflow:hidden;
-}
-.card::before{
-  content:'';position:absolute;top:0;left:0;
-  width:3px;height:100%;
-  background:linear-gradient(to bottom,var(--accent),var(--accent2));
-  opacity:0;transition:opacity 0.2s;
-}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;opacity:0;animation:fadeUp 0.7s 0.4s ease forwards;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;cursor:pointer;transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s;position:relative;overflow:hidden;}
+.card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(to bottom,var(--accent),var(--accent2));opacity:0;transition:opacity 0.2s;}
 .card:hover{border-color:rgba(0,212,255,0.35);transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,212,255,0.08);}
 .card:hover::before{opacity:1;}
 .card-wide{grid-column:1/-1;}
 .card-ico{font-size:1.3rem;margin-bottom:10px;}
-.card-title{font-family:'DM Serif Display',serif;font-size:1.05rem;color:#fff;margin-bottom:5px;}
+.card-title{font-family:'Libre Baskerville',serif;font-size:1.05rem;color:#fff;margin-bottom:5px;}
 .card-sub{font-size:0.78rem;color:var(--muted);margin-bottom:11px;}
 .card-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:13px;}
-.ctag{font-size:0.7rem;padding:3px 8px;border-radius:20px;
-  background:var(--tag-bg);border:1px solid var(--tag-border);color:#c9d1d9;}
+.ctag{font-size:0.7rem;padding:3px 8px;border-radius:20px;background:var(--tag-bg);border:1px solid var(--tag-border);color:#c9d1d9;}
 .ctag.hi{background:rgba(0,212,255,0.12);border-color:rgba(0,212,255,0.35);color:var(--accent);}
 .card-cta{font-size:0.73rem;color:var(--accent);opacity:0.65;transition:opacity 0.2s;}
 .card:hover .card-cta{opacity:1;}
-
-/* ========== MODAL ========== */
-#modal-overlay{
-  position:fixed;inset:0;background:rgba(0,0,0,0.78);
-  backdrop-filter:blur(6px);z-index:2000;
-  display:none;align-items:center;justify-content:center;padding:20px;
-}
+#modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.78);backdrop-filter:blur(6px);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px;}
 #modal-overlay.open{display:flex;}
-.modal-box{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:16px;max-width:700px;width:100%;
-  max-height:88vh;overflow-y:auto;padding:36px;
-  position:relative;animation:modalIn 0.3s ease;
-}
-@keyframes modalIn{
-  from{opacity:0;transform:translateY(18px) scale(0.97)}
-  to{opacity:1;transform:translateY(0) scale(1)}
-}
-.modal-close{
-  position:absolute;top:16px;right:16px;
-  background:var(--surface2);border:1px solid var(--border);
-  color:var(--muted);width:32px;height:32px;border-radius:8px;
-  cursor:pointer;font-size:1rem;
-  display:flex;align-items:center;justify-content:center;
-  transition:color 0.2s;
-}
+.modal-box{background:var(--surface);border:1px solid var(--border);border-radius:16px;max-width:700px;width:100%;max-height:88vh;overflow-y:auto;padding:36px;position:relative;animation:modalIn 0.3s ease;}
+@keyframes modalIn{from{opacity:0;transform:translateY(18px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.modal-close{position:absolute;top:16px;right:16px;background:var(--surface2);border:1px solid var(--border);color:var(--muted);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:color 0.2s;}
 .modal-close:hover{color:#fff;}
-.modal-title{font-family:'DM Serif Display',serif;font-size:1.55rem;color:#fff;margin-bottom:5px;}
+.modal-title{font-family:'Libre Baskerville',serif;font-size:1.55rem;color:#fff;margin-bottom:5px;}
 .modal-sub{font-size:0.78rem;color:var(--accent);margin-bottom:22px;letter-spacing:0.1em;text-transform:uppercase;}
-
-/* MODAL INTERNOS */
 .ms{margin-bottom:26px;}
-.ms-title{
-  font-size:0.68rem;font-weight:600;letter-spacing:0.2em;
-  text-transform:uppercase;color:var(--accent);margin-bottom:12px;
-  display:flex;align-items:center;gap:8px;
-}
+.ms-title{font-size:0.68rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
 .ms-title::after{content:'';flex:1;height:1px;background:var(--border);}
 .mj{margin-bottom:18px;}
 .mj-header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:2px;}
-.mj-title{font-family:'DM Serif Display',serif;font-size:0.98rem;color:#fff;}
+.mj-title{font-family:'Libre Baskerville',serif;font-size:0.98rem;color:#fff;}
 .mj-period{font-size:0.7rem;color:var(--accent);background:var(--tag-bg);border:1px solid var(--tag-border);padding:2px 8px;border-radius:20px;}
 .mj-co{font-size:0.78rem;color:var(--muted);margin-bottom:7px;}
 .ml{list-style:none;}
 .ml li{font-size:0.84rem;color:#8b949e;padding-left:14px;position:relative;margin-bottom:3px;line-height:1.7;}
 .ml li::before{content:'›';position:absolute;left:0;color:var(--accent);}
-.m-ai-box{background:linear-gradient(135deg,rgba(0,212,255,0.05),rgba(124,58,237,0.05));
-  border:1px solid rgba(0,212,255,0.2);border-radius:10px;padding:14px 16px;margin-top:10px;}
-.m-ai-label{font-size:0.66rem;letter-spacing:0.15em;text-transform:uppercase;
-  color:var(--accent);font-weight:600;margin-bottom:7px;}
+.m-ai-box{background:linear-gradient(135deg,rgba(0,212,255,0.05),rgba(124,58,237,0.05));border:1px solid rgba(0,212,255,0.2);border-radius:10px;padding:14px 16px;margin-top:10px;}
+.m-ai-label{font-size:0.66rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:7px;}
 .m-ai-box .ml li{color:#c9d1d9;}
 .sb-wrap{margin-bottom:9px;}
 .sb-label{display:flex;justify-content:space-between;font-size:0.79rem;color:#c9d1d9;margin-bottom:4px;}
 .sb-label span{color:var(--muted);font-size:0.69rem;}
 .sb{height:3px;background:var(--surface2);border-radius:2px;overflow:hidden;}
-.sb-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));
-  border-radius:2px;width:0;transition:width 1s ease;}
+.sb-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px;width:0;transition:width 1s ease;}
 .m-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
-.m-tag{font-size:0.74rem;padding:4px 9px;border-radius:20px;
-  background:var(--tag-bg);border:1px solid var(--tag-border);color:#c9d1d9;}
+.m-tag{font-size:0.74rem;padding:4px 9px;border-radius:20px;background:var(--tag-bg);border:1px solid var(--tag-border);color:#c9d1d9;}
 .m-tag.hi{background:rgba(0,212,255,0.12);border-color:rgba(0,212,255,0.4);color:var(--accent);font-weight:500;}
-.m-lang{display:flex;justify-content:space-between;align-items:center;
-  padding:8px 0;border-bottom:1px solid var(--border);font-size:0.82rem;}
+.m-lang{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:0.82rem;color:var(--text);}
 .m-lang:last-child{border-bottom:none;}
-.m-lang-lvl{font-size:0.7rem;color:var(--accent);background:var(--tag-bg);
-  border:1px solid var(--tag-border);padding:2px 8px;border-radius:10px;}
-.m-edu{padding:11px;background:var(--surface2);border:1px solid var(--border);
-  border-radius:8px;margin-bottom:7px;}
+.m-lang-lvl{font-size:0.7rem;color:var(--accent);background:var(--tag-bg);border:1px solid var(--tag-border);padding:2px 8px;border-radius:10px;}
+.m-edu{padding:11px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;margin-bottom:7px;}
 .m-edu-t{font-size:0.83rem;color:#fff;font-weight:500;margin-bottom:2px;}
 .m-edu-c{font-size:0.74rem;color:var(--muted);}
-
-/* ANIMATIONS */
+.hobby-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:14px;margin-top:4px;}
+.hobby-item{display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;}
+.hobby-label{font-size:0.76rem;color:#c9d1d9;text-align:center;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-
 @media(max-width:640px){
   .after-header{grid-template-columns:1fr;}
-  .after-contact-block{align-items:flex-start;}
+  .after-cb{align-items:flex-start;}
   .after-hero{flex-direction:column;}
   .before-paper{padding:32px 24px;}
   .modal-box{padding:22px;}
@@ -246,70 +157,58 @@ body{font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
 </head>
 <body>
 
-<!-- ======== FASE 1: ANTES ======== -->
+<!-- FASE 1: ANTES -->
 <div id="phase-before">
   <div class="before-paper">
-    <div class="before-badge">CV · Versión clásica</div>
+    <div class="before-badge">CV &middot; Version clasica</div>
     <div class="before-name">FUENCISLA ARIAS</div>
-    <div class="before-role">Administrativo · ERP · Soporte Técnico</div>
-    <div class="before-contact">
-      Sant Pere Molanta, Barcelona &nbsp;·&nbsp; 629 337 447 &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="37514252590303775f58435a565e5b1954585a">[email&#160;protected]</a>
-    </div>
-
+    <div class="before-role">Administrativo &middot; ERP &middot; Soporte Tecnico</div>
+    <div class="before-contact">Sant Pere Molanta, Barcelona &nbsp;&middot;&nbsp; 629 337 447 &nbsp;&middot;&nbsp; fuen44 [at] hotmail.com</div>
     <div class="before-h">Experiencia</div>
-
     <div class="before-jt">Catering Cal Blay, S.L.U.</div>
-    <div class="before-jm">Dpto. Producción · 2014 – Actualidad · Sant Pere de Riudebitlles</div>
-    <div class="before-jd">Gestión de pedidos, inventario y stock. Configuración y mantenimiento ERP "NEO". Soporte ofimático a usuarios.</div>
-
+    <div class="before-jm">Dpto. Produccion &middot; 2014 &ndash; Actualidad</div>
+    <div class="before-jd">Gestion de pedidos, inventario y stock. Configuracion y mantenimiento ERP NEO. Soporte ofomatico a usuarios.</div>
     <div class="before-jt">Xarcuteria Xarbebo</div>
-    <div class="before-jm">Fundadora y gestora · 2012 – 2013 · Sant Sadurní d'Anoia</div>
-    <div class="before-jd">Gestión integral de establecimiento. Compras, ventas y contabilidad.</div>
-
+    <div class="before-jm">Fundadora y gestora &middot; 2012 &ndash; 2013</div>
+    <div class="before-jd">Gestion integral de establecimiento. Compras, ventas y contabilidad.</div>
     <div class="before-jt">UNEC S.A. (Grupo EXPERT)</div>
-    <div class="before-jm">Responsable Funcional ERP · 1997 – 2012</div>
-    <div class="before-jd">Gestión del ERP para red de tiendas y franquicias. EDI con proveedores. Protección de datos LOPD. Soporte técnico.</div>
-
-    <div class="before-jt">UNEC Informática S.A.</div>
-    <div class="before-jm">Consultora IT · 1991 – 1997</div>
-    <div class="before-jd">Consultoría ERP/CRM. Testing de aplicaciones. Redacción de manuales técnicos.</div>
-
-    <div class="before-h">Formación</div>
-    <div class="before-jd">Técnico Auxiliar Administrativo y Comercial — La Salle, Madrid</div>
-
+    <div class="before-jm">Responsable Funcional ERP &middot; 1997 &ndash; 2012</div>
+    <div class="before-jd">Gestion del ERP para red de tiendas y franquicias. EDI con proveedores. Proteccion de datos LOPD.</div>
+    <div class="before-jt">UNEC Informatica S.A.</div>
+    <div class="before-jm">Consultora IT &middot; 1991 &ndash; 1997</div>
+    <div class="before-jd">Consultoria ERP/CRM. Testing de aplicaciones. Redaccion de manuales tecnicos.</div>
+    <div class="before-h">Formacion</div>
+    <div class="before-jd">Tecnico Auxiliar Administrativo y Comercial &mdash; La Salle, Madrid</div>
     <div class="before-h">Conocimientos</div>
-    <div class="before-skills">Microsoft Office (nivel alto) &nbsp;·&nbsp; SAP MM &nbsp;·&nbsp; EDI EDICOM &nbsp;·&nbsp; Internet &nbsp;·&nbsp; Inglés intermedio</div>
+    <div class="before-skills">Microsoft Office &nbsp;&middot;&nbsp; SAP MM &nbsp;&middot;&nbsp; EDI EDICOM &nbsp;&middot;&nbsp; Internet &nbsp;&middot;&nbsp; Ingles intermedio</div>
   </div>
-
   <div class="btn-wrap">
-    <button class="btn-transform" onclick="startTransform()">✦ Transformar con IA</button>
+    <button class="btn-transform" id="btn-main">&#10022; Transformar con IA</button>
     <div class="btn-hint">Descubre lo que la IA puede hacer por tu carrera</div>
   </div>
 </div>
 
-<!-- ======== GLITCH OVERLAY ======== -->
+<!-- GLITCH -->
 <div id="glitch-overlay">
   <canvas id="glitch-canvas"></canvas>
   <div id="glitch-text"></div>
 </div>
 
-<!-- ======== FASE 2: DESPUÉS ======== -->
+<!-- FASE 2: DESPUES -->
 <div id="phase-after">
   <div class="after-wrap">
-
     <header class="after-header">
       <div>
         <div class="after-name">Fuencisla<br><span>Arias</span></div>
-        <div class="after-role">Functional <span>AI</span> Specialist · AI Analyst</div>
+        <div class="after-role">Functional <span>AI</span> Specialist &middot; AI Analyst</div>
       </div>
-      <div class="after-contact-block">
-        <div class="ci"><div class="ci-ico">📍</div>Sant Pere Molanta, Barcelona</div>
-        <div class="ci"><div class="ci-ico">📞</div>629 337 447</div>
-        <div class="ci"><div class="ci-ico">✉️</div><span id="cv-email"></span></div>
+      <div class="after-cb">
+        <div class="ci"><div class="ci-ico">&#128205;</div>Sant Pere Molanta, Barcelona</div>
+        <div class="ci"><div class="ci-ico">&#128222;</div>629 337 447</div>
+        <div class="ci"><div class="ci-ico">&#9993;</div><span id="cv-email"></span></div>
       </div>
     </header>
 
-    <!-- HERO -->
     <div class="after-hero">
       <svg viewBox="0 0 160 160" width="130" height="130" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
         <defs>
@@ -338,342 +237,239 @@ body{font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
         </g>
         <line x1="80" y1="8" x2="80" y2="138" stroke="#00d4ff" stroke-width="0.5" stroke-dasharray="4 3" opacity="0.4"/>
         <circle cx="116" cy="78" r="2" fill="#00d4ff" opacity="0"><animate attributeName="opacity" values="0;0.8;0" dur="2.5s" repeatCount="indefinite"/><animate attributeName="cy" values="78;62;78" dur="2.5s" repeatCount="indefinite"/></circle>
-        <circle cx="126" cy="50" r="1.5" fill="#7c3aed" opacity="0"><animate attributeName="opacity" values="0;0.7;0" dur="2s" begin="0.7s" repeatCount="indefinite"/><animate attributeName="cy" values="50;36;50" dur="2s" begin="0.7s" repeatCount="indefinite"/></circle>
         <circle cx="80" cy="34" r="20" fill="none" stroke="#00d4ff" stroke-width="0.8" opacity="0"><animate attributeName="r" values="20;30;20" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="3s" repeatCount="indefinite"/></circle>
-        <text x="80" y="150" text-anchor="middle" fill="#8b949e" font-family="DM Sans,sans-serif" font-size="8" letter-spacing="2">HUMAN + AI</text>
+        <text x="80" y="150" text-anchor="middle" fill="#8b949e" font-family="Nunito,sans-serif" font-size="8" letter-spacing="2">HUMAN + AI</text>
       </svg>
       <div class="hero-t">
-        <div class="hero-tagline">Más de 30 años de experiencia humana.<br><em>Ahora potenciada con IA.</em></div>
-        <div class="hero-sub">Perfil híbrido técnico-funcional con especialización activa en LLMs, prompt engineering y desarrollo real con Claude API. Trayectoria única que combina consultoría ERP, análisis funcional y construcción de herramientas de IA en producción.</div>
+        <div class="hero-tagline">Mas de 30 anos de experiencia humana.<br><em>Ahora potenciada con IA.</em></div>
+        <div class="hero-sub">Perfil hibrido tecnico-funcional con especializacion activa en LLMs, prompt engineering y desarrollo real con Claude API. Trayectoria unica que combina consultoria ERP, analisis funcional y construccion de herramientas de IA en produccion.</div>
       </div>
     </div>
 
-    <!-- CARDS -->
     <div class="cards-grid">
-
-      <div class="card card-wide" onclick="openModal('ia')">
-        <div class="card-ico">⚡</div>
-        <div class="card-title">Proyectos de IA — Altrad Plettac Ibérica</div>
-        <div class="card-sub">2023 — Presente · Desarrollo con Claude API</div>
+      <div class="card card-wide" id="c-ia">
+        <div class="card-ico">&#9889;</div>
+        <div class="card-title">Proyectos de IA &mdash; Altrad Plettac Iberica</div>
+        <div class="card-sub">2023 &mdash; Presente &middot; Desarrollo con Claude API</div>
         <div class="card-tags">
           <span class="ctag hi">Claude API</span><span class="ctag hi">Prompt Engineering</span>
           <span class="ctag hi">Vision API</span><span class="ctag hi">LLMs</span>
           <span class="ctag">Python</span><span class="ctag">HTML/JS</span><span class="ctag">IndexedDB</span>
         </div>
-        <div class="card-cta">Ver proyectos completos →</div>
+        <div class="card-cta">Ver proyectos completos &rarr;</div>
       </div>
-
-      <div class="card" onclick="openModal('exp')">
-        <div class="card-ico">🗂</div>
+      <div class="card" id="c-exp">
+        <div class="card-ico">&#128194;</div>
         <div class="card-title">Trayectoria Profesional</div>
-        <div class="card-sub">1991 — 2023 · +30 años</div>
+        <div class="card-sub">1991 &mdash; 2023 &middot; +30 anos</div>
         <div class="card-tags">
-          <span class="ctag">ERP</span><span class="ctag">SAP MM</span>
-          <span class="ctag">EDI</span><span class="ctag">LOPD</span>
+          <span class="ctag">ERP</span><span class="ctag">SAP MM</span><span class="ctag">EDI</span><span class="ctag">LOPD</span>
         </div>
-        <div class="card-cta">Ver historial completo →</div>
+        <div class="card-cta">Ver historial completo &rarr;</div>
       </div>
-
-      <div class="card" onclick="openModal('skills')">
-        <div class="card-ico">🧠</div>
-        <div class="card-title">Skills & Tecnologías</div>
-        <div class="card-sub">IA · Desarrollo · Sistemas</div>
+      <div class="card" id="c-skills">
+        <div class="card-ico">&#129504;</div>
+        <div class="card-title">Skills &amp; Tecnologias</div>
+        <div class="card-sub">IA &middot; Desarrollo &middot; Sistemas</div>
         <div class="card-tags">
-          <span class="ctag hi">Anthropic Claude</span>
-          <span class="ctag">Python</span><span class="ctag">SQLite</span>
+          <span class="ctag hi">Anthropic Claude</span><span class="ctag">Python</span><span class="ctag">SQLite</span>
         </div>
-        <div class="card-cta">Ver todas las skills →</div>
+        <div class="card-cta">Ver todas las skills &rarr;</div>
       </div>
-
-      <div class="card" onclick="openModal('form')">
-        <div class="card-ico">🎓</div>
-        <div class="card-title">Formación & Idiomas</div>
-        <div class="card-sub">Académica + Autodidacta IA</div>
+      <div class="card" id="c-form">
+        <div class="card-ico">&#127891;</div>
+        <div class="card-title">Formacion &amp; Idiomas</div>
+        <div class="card-sub">Academica + Autodidacta IA</div>
         <div class="card-tags">
-          <span class="ctag">La Salle Madrid</span>
-          <span class="ctag">Inglés B1</span>
-          <span class="ctag hi">IA 2023–hoy</span>
+          <span class="ctag">La Salle Madrid</span><span class="ctag">Ingles B1</span><span class="ctag hi">IA 2023&ndash;hoy</span>
         </div>
-        <div class="card-cta">Ver detalles →</div>
+        <div class="card-cta">Ver detalles &rarr;</div>
       </div>
-
-      <div class="card card-wide" onclick="openModal('hobbies')">
-        <div class="card-ico">✨</div>
-        <div class="card-title">Intereses & Aficiones</div>
+      <div class="card" id="c-hobbies" style="max-width:320px;">
+        <div class="card-ico">&#10024;</div>
+        <div class="card-title">Intereses &amp; Aficiones</div>
         <div class="card-sub">Lo que me mueve fuera del trabajo</div>
-        <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin:14px 0 14px;">
-          <svg width="38" height="38" viewBox="0 0 36 36"><g fill="none" stroke="#00d4ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="20" rx="10" ry="8" fill="rgba(0,212,255,0.07)"/><circle cx="18" cy="11" r="6" fill="rgba(0,212,255,0.07)"/><path d="M13 8 Q11 4 9 6"/><path d="M23 8 Q25 4 27 6"/><line x1="14" y1="14" x2="10" y2="16"/><line x1="22" y1="14" x2="26" y2="16"/><ellipse cx="15.5" cy="12" rx="1.2" ry="1.4"/><ellipse cx="20.5" cy="12" rx="1.2" ry="1.4"/><ellipse cx="18" cy="15" rx="3" ry="1.8" fill="rgba(0,212,255,0.1)"/><path d="M11 22 Q9 28 10 30"/><path d="M25 22 Q27 28 26 30"/><path d="M15 28 Q15 32 13 33"/><path d="M21 28 Q21 32 23 33"/></g></svg>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0 10px;overflow:hidden;">
+          <svg width="38" height="38" viewBox="0 0 36 36"><g fill="none" stroke="#00d4ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="20" rx="10" ry="8" fill="rgba(0,212,255,0.07)"/><circle cx="18" cy="11" r="6" fill="rgba(0,212,255,0.07)"/><path d="M13 8 Q11 4 9 6"/><path d="M23 8 Q25 4 27 6"/><line x1="14" y1="14" x2="10" y2="16"/><line x1="22" y1="14" x2="26" y2="16"/><ellipse cx="15.5" cy="12" rx="1.2" ry="1.4"/><ellipse cx="20.5" cy="12" rx="1.2" ry="1.4"/><path d="M11 22 Q9 28 10 30"/><path d="M25 22 Q27 28 26 30"/><path d="M15 28 Q15 32 13 33"/><path d="M21 28 Q21 32 23 33"/></g></svg>
           <svg width="38" height="38" viewBox="0 0 36 36"><g fill="none" stroke="#00d4ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="18,4 32,30 4,30" fill="rgba(0,212,255,0.07)"/><polygon points="18,4 23,14 13,14" fill="rgba(0,212,255,0.18)"/><line x1="4" y1="30" x2="32" y2="30"/></g></svg>
-          <svg width="38" height="38" viewBox="0 0 36 36"><g fill="none" stroke="#00d4ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="6" r="3.5"/><path d="M18 10 L16 20 L12 28"/><path d="M18 10 L20 20 L24 28"/><path d="M16 15 L12 18"/><path d="M18 15 L22 18"/></g></svg>
+          <svg width="38" height="38" viewBox="0 0 36 36"><g fill="none" stroke="#00d4ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="6" r="3.5"/><path d="M18 10 L16 20 L12 29"/><path d="M18 10 L20 20 L24 29"/><path d="M16 15 L11 19"/><path d="M18 15 L23 19"/></g></svg>
           <svg width="38" height="38" viewBox="0 0 36 36"><g fill="none" stroke="#00d4ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="4" width="16" height="18" rx="8" fill="rgba(0,212,255,0.07)"/><line x1="18" y1="22" x2="18" y2="32"/><line x1="14" y1="10" x2="22" y2="10"/><line x1="14" y1="14" x2="22" y2="14"/><line x1="14" y1="18" x2="22" y2="18"/></g></svg>
           <svg width="38" height="38" viewBox="0 0 36 36"><g fill="none" stroke="#7c3aed" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="13" rx="9" ry="11" fill="rgba(124,58,237,0.07)"/><line x1="18" y1="24" x2="18" y2="33"/><line x1="12" y1="8" x2="24" y2="18"/><line x1="24" y1="8" x2="12" y2="18"/><line x1="10" y1="13" x2="26" y2="13"/><line x1="18" y1="2" x2="18" y2="24"/></g></svg>
-          <svg width="38" height="38" viewBox="0 0 36 36"><g fill="none" stroke="#00d4ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 26 L14 10 L28 7 L28 23"/><circle cx="11" cy="26" r="3" fill="rgba(0,212,255,0.15)"/><circle cx="25" cy="23" r="3" fill="rgba(0,212,255,0.15)"/></g></svg>
-          <svg width="38" height="38" viewBox="0 0 36 36"><g fill="none" stroke="#7c3aed" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="28" height="20" rx="2" fill="rgba(124,58,237,0.07)"/><polygon points="14,13 14,23 24,18" fill="rgba(124,58,237,0.2)" stroke="#7c3aed"/><line x1="4" y1="12" x2="8" y2="8"/><line x1="12" y1="12" x2="16" y2="8"/><line x1="20" y1="12" x2="24" y2="8"/><line x1="28" y1="12" x2="32" y2="8"/></g></svg>
+          <svg width="38" height="38" viewBox="0 0 36 36"><g fill="none" stroke="#00d4ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 27 L14 10 L28 7 L28 24"/><circle cx="11" cy="27" r="3.5" fill="rgba(0,212,255,0.15)"/><circle cx="25" cy="24" r="3.5" fill="rgba(0,212,255,0.15)"/><line x1="14" y1="16" x2="28" y2="13"/></g></svg>
+          <svg width="38" height="38" viewBox="0 0 36 36"><g fill="none" stroke="#7c3aed" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="28" height="20" rx="2" fill="rgba(124,58,237,0.07)"/><polygon points="14,13 14,23 24,18" fill="rgba(124,58,237,0.2)"/><line x1="4" y1="12" x2="8" y2="8"/><line x1="12" y1="12" x2="16" y2="8"/><line x1="20" y1="12" x2="24" y2="8"/><line x1="28" y1="12" x2="32" y2="8"/></g></svg>
         </div>
-        <div class="card-cta">Ver más →</div>
+        <div class="card-cta">Ver mas &rarr;</div>
       </div>
-
     </div>
   </div>
 </div>
 
-<!-- ======== MODAL ======== -->
-<div id="modal-overlay" onclick="closeOut(event)">
+<!-- MODAL -->
+<div id="modal-overlay">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeModal()">✕</button>
+    <button class="modal-close" id="modal-close-btn">&#10005;</button>
     <div id="modal-content"></div>
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// EMAIL
-document.getElementById('cv-email').textContent='fuen44'+'@'+'hotmail.com';
+<script>
+(function() {
 
-// ===== DATOS MODALES =====
-const M = {
-  ia:{
-    title:'Proyectos de IA',
-    sub:'Altrad Plettac Ibérica · 2023 — Presente',
-    html:`
-<div class="ms">
-  <div class="ms-title">Rol en la empresa</div>
-  <div class="mj">
-    <div class="mj-header"><div class="mj-title">Gestión de Garantías & Desarrollo IA</div><div class="mj-period">2023 — Presente</div></div>
-    <div class="mj-co">Altrad Plettac Ibérica, S.L. · Distribuidor equipos construcción · Valencia</div>
-    <ul class="ml">
-      <li>Gestión integral del proceso de garantías y coordinación de proveedores SAT</li>
-      <li>Gestión de recambios y análisis de incidencias técnicas en equipos</li>
-    </ul>
-  </div>
-</div>
-<div class="ms">
-  <div class="ms-title">Proyectos IA desarrollados</div>
-  <div class="m-ai-box">
-    <div class="m-ai-label">⚡ Construidos desde cero</div>
-    <ul class="ml">
-      <li>App web de gestión de garantías con integración de <strong style="color:#00d4ff">Claude API (Anthropic)</strong></li>
-      <li>Lectura automática de documentos y matrículas con <strong style="color:#00d4ff">Claude Vision API</strong></li>
-      <li>Prompt engineering avanzado para extracción de datos desde emails y PDFs</li>
-      <li>Herramienta desktop <strong style="color:#00d4ff">Python/PyQt6 + SQLite</strong> para gestión técnica interna</li>
-      <li>Frontend HTML/JS con IndexedDB, File System API y sincronización Excel/CSV</li>
-      <li>Análisis de comportamiento de modelos LLM y resolución de fallos en producción</li>
-      <li>Módulo "Desde Email": lectura de contenido pegado y procesamiento con IA</li>
-    </ul>
-  </div>
-</div>
-<div class="ms">
-  <div class="ms-title">Tecnologías</div>
-  <div class="m-tags">
-    <span class="m-tag hi">Anthropic Claude API</span><span class="m-tag hi">Prompt Engineering</span>
-    <span class="m-tag hi">Vision API</span><span class="m-tag">Python</span>
-    <span class="m-tag">PyQt6</span><span class="m-tag">HTML/JS/CSS</span>
-    <span class="m-tag">SQLite</span><span class="m-tag">IndexedDB</span>
-    <span class="m-tag">File System API</span><span class="m-tag">Excel/CSV</span>
-  </div>
-</div>`
+// EMAIL
+var em = document.getElementById('cv-email');
+if (em) em.textContent = 'fuen44' + '\u0040' + 'hotmail.com';
+
+// MODAL DATA
+var modalData = {
+  ia: {
+    title: 'Proyectos de IA',
+    sub: 'Altrad Plettac Iberica &middot; 2023 &mdash; Presente',
+    body: '<div class="ms"><div class="ms-title">Rol en la empresa</div><div class="mj"><div class="mj-header"><div class="mj-title">Gestion de Garantias &amp; Desarrollo IA</div><div class="mj-period">2023 &mdash; Presente</div></div><div class="mj-co">Altrad Plettac Iberica, S.L. &middot; Valencia</div><ul class="ml"><li>Gestion integral del proceso de garantias y coordinacion de proveedores SAT</li><li>Gestion de recambios y analisis de incidencias tecnicas en equipos</li></ul></div></div><div class="ms"><div class="ms-title">Proyectos IA desarrollados</div><div class="m-ai-box"><div class="m-ai-label">Construidos desde cero</div><ul class="ml"><li>App web de gestion de garantias con integracion de Claude API (Anthropic)</li><li>Lectura automatica de documentos y matriculas con Claude Vision API</li><li>Prompt engineering avanzado para extraccion de datos desde emails y PDFs</li><li>Herramienta desktop Python/PyQt6 + SQLite para gestion tecnica interna</li><li>Frontend HTML/JS con IndexedDB, File System API y sincronizacion Excel/CSV</li><li>Analisis de comportamiento de modelos LLM y resolucion de fallos en produccion</li><li>Modulo Desde Email: lectura de contenido pegado y procesamiento con IA</li></ul></div></div><div class="ms"><div class="ms-title">Tecnologias</div><div class="m-tags"><span class="m-tag hi">Anthropic Claude API</span><span class="m-tag hi">Prompt Engineering</span><span class="m-tag hi">Vision API</span><span class="m-tag">Python</span><span class="m-tag">PyQt6</span><span class="m-tag">HTML/JS/CSS</span><span class="m-tag">SQLite</span><span class="m-tag">IndexedDB</span><span class="m-tag">Excel/CSV</span></div></div>'
   },
-  exp:{
-    title:'Trayectoria Profesional',
-    sub:'1991 — 2023 · +30 años de experiencia',
-    html:`
-<div class="ms">
-  <div class="ms-title">Experiencia</div>
-  <div class="mj">
-    <div class="mj-header"><div class="mj-title">Responsable de Producción & ERP</div><div class="mj-period">2014 — 2023</div></div>
-    <div class="mj-co">Catering Cal Blay, S.L.U. · Sant Pere de Riudebitlles</div>
-    <ul class="ml">
-      <li>Gestión de pedidos y material para ejecución de eventos</li>
-      <li>Control de inventario y movimientos de stock</li>
-      <li>Configuración y mantenimiento del ERP "NEO": optimización de procesos</li>
-      <li>Soporte técnico: Office, móviles, sistemas internos</li>
-      <li>Gestión de compras, albaranes y facturación de proveedores</li>
-    </ul>
-  </div>
-  <div class="mj">
-    <div class="mj-header"><div class="mj-title">Fundadora & Gestora</div><div class="mj-period">2012 — 2013</div></div>
-    <div class="mj-co">Xarcuteria Xarbebo · Sant Sadurní d'Anoia</div>
-    <ul class="ml"><li>Creación y gestión integral: selección de producto, compras, ventas y contabilidad</li></ul>
-  </div>
-  <div class="mj">
-    <div class="mj-header"><div class="mj-title">Responsable Funcional ERP</div><div class="mj-period">1997 — 2012</div></div>
-    <div class="mj-co">UNEC S.A. (Grupo EXPERT) · Sant Llorenç d'Hortons</div>
-    <ul class="ml">
-      <li>Gestión funcional del ERP corporativo para red de tiendas y franquicias</li>
-      <li>Interlocución con desarrollo externo: coordinación de incidencias y extensiones</li>
-      <li>Implementación EDI con proveedores: EDIWIN4 EDICOM (ORDERS, ORDRSP, INVOIC, PRICAT)</li>
-      <li>Responsable protección de datos LOPD</li>
-      <li>Soporte técnico a usuarios y dirección</li>
-    </ul>
-  </div>
-  <div class="mj">
-    <div class="mj-header"><div class="mj-title">Consultora IT & Administrativa</div><div class="mj-period">1991 — 1997</div></div>
-    <div class="mj-co">UNEC Informática S.A. · Sant Llorenç d'Hortons</div>
-    <ul class="ml">
-      <li>Consultoría y soporte informático a clientes (ERP y CRM)</li>
-      <li>Testing de ERP para red de tiendas del Grupo EXPERT</li>
-      <li>Redacción de manuales de instrucción de aplicaciones nativas</li>
-    </ul>
-  </div>
-</div>`
+  exp: {
+    title: 'Trayectoria Profesional',
+    sub: '1991 &mdash; 2023 &middot; +30 anos de experiencia',
+    body: '<div class="ms"><div class="ms-title">Experiencia</div><div class="mj"><div class="mj-header"><div class="mj-title">Responsable de Produccion &amp; ERP</div><div class="mj-period">2014 &mdash; 2023</div></div><div class="mj-co">Catering Cal Blay, S.L.U. &middot; Sant Pere de Riudebitlles</div><ul class="ml"><li>Gestion de pedidos y material para ejecucion de eventos</li><li>Control de inventario y movimientos de stock</li><li>Configuracion y mantenimiento del ERP NEO</li><li>Soporte tecnico: Office, moviles, sistemas internos</li></ul></div><div class="mj"><div class="mj-header"><div class="mj-title">Fundadora &amp; Gestora</div><div class="mj-period">2012 &mdash; 2013</div></div><div class="mj-co">Xarcuteria Xarbebo &middot; Sant Sadurni d\'Anoia</div><ul class="ml"><li>Creacion y gestion integral: compras, ventas y contabilidad</li></ul></div><div class="mj"><div class="mj-header"><div class="mj-title">Responsable Funcional ERP</div><div class="mj-period">1997 &mdash; 2012</div></div><div class="mj-co">UNEC S.A. (Grupo EXPERT) &middot; Sant Llorenc d\'Hortons</div><ul class="ml"><li>Gestion funcional del ERP para red de tiendas y franquicias</li><li>Implementacion EDI con proveedores: EDIWIN4 EDICOM</li><li>Responsable proteccion de datos LOPD</li><li>Soporte tecnico a usuarios y direccion</li></ul></div><div class="mj"><div class="mj-header"><div class="mj-title">Consultora IT &amp; Administrativa</div><div class="mj-period">1991 &mdash; 1997</div></div><div class="mj-co">UNEC Informatica S.A. &middot; Sant Llorenc d\'Hortons</div><ul class="ml"><li>Consultoria y soporte informatico a clientes (ERP y CRM)</li><li>Testing de ERP para red de tiendas del Grupo EXPERT</li><li>Redaccion de manuales de instruccion de aplicaciones</li></ul></div></div>'
   },
-  skills:{
-    title:'Skills & Tecnologías',
-    sub:'IA · Desarrollo · Sistemas',
-    html:`
-<div class="ms">
-  <div class="ms-title">Nivel por skill</div>
-  <div class="sb-wrap"><div class="sb-label">Prompt Engineering<span>Avanzado</span></div><div class="sb"><div class="sb-fill" data-w="90"></div></div></div>
-  <div class="sb-wrap"><div class="sb-label">Claude API / LLMs<span>Avanzado</span></div><div class="sb"><div class="sb-fill" data-w="88"></div></div></div>
-  <div class="sb-wrap"><div class="sb-label">Análisis comportamiento IA<span>Alto</span></div><div class="sb"><div class="sb-fill" data-w="85"></div></div></div>
-  <div class="sb-wrap"><div class="sb-label">HTML / JS / CSS<span>Avanzado</span></div><div class="sb"><div class="sb-fill" data-w="82"></div></div></div>
-  <div class="sb-wrap"><div class="sb-label">Python<span>Funcional</span></div><div class="sb"><div class="sb-fill" data-w="72"></div></div></div>
-  <div class="sb-wrap"><div class="sb-label">SQLite / IndexedDB<span>Funcional</span></div><div class="sb"><div class="sb-fill" data-w="70"></div></div></div>
-</div>
-<div class="ms">
-  <div class="ms-title">IA & LLMs</div>
-  <div class="m-tags"><span class="m-tag hi">Anthropic Claude</span><span class="m-tag hi">Prompt Engineering</span><span class="m-tag hi">Vision API</span><span class="m-tag hi">LLMs</span></div>
-</div>
-<div class="ms">
-  <div class="ms-title">Desarrollo</div>
-  <div class="m-tags"><span class="m-tag">Python</span><span class="m-tag">PyQt6</span><span class="m-tag">HTML5</span><span class="m-tag">JavaScript</span><span class="m-tag">CSS3</span><span class="m-tag">SQLite</span><span class="m-tag">IndexedDB</span></div>
-</div>
-<div class="ms">
-  <div class="ms-title">Sistemas & ERP</div>
-  <div class="m-tags"><span class="m-tag">SAP MM (FIORI/HANA/R3)</span><span class="m-tag">ERP NEO</span><span class="m-tag">EDI EDICOM</span><span class="m-tag">Office 365</span><span class="m-tag">Linux</span></div>
-</div>`
+  skills: {
+    title: 'Skills &amp; Tecnologias',
+    sub: 'IA &middot; Desarrollo &middot; Sistemas',
+    body: '<div class="ms"><div class="ms-title">Nivel por skill</div><div class="sb-wrap"><div class="sb-label">Prompt Engineering<span>Avanzado</span></div><div class="sb"><div class="sb-fill" data-w="90"></div></div></div><div class="sb-wrap"><div class="sb-label">Claude API / LLMs<span>Avanzado</span></div><div class="sb"><div class="sb-fill" data-w="88"></div></div></div><div class="sb-wrap"><div class="sb-label">Analisis comportamiento IA<span>Alto</span></div><div class="sb"><div class="sb-fill" data-w="85"></div></div></div><div class="sb-wrap"><div class="sb-label">HTML / JS / CSS<span>Avanzado</span></div><div class="sb"><div class="sb-fill" data-w="82"></div></div></div><div class="sb-wrap"><div class="sb-label">Python<span>Funcional</span></div><div class="sb"><div class="sb-fill" data-w="72"></div></div></div><div class="sb-wrap"><div class="sb-label">SQLite / IndexedDB<span>Funcional</span></div><div class="sb"><div class="sb-fill" data-w="70"></div></div></div></div><div class="ms"><div class="ms-title">IA &amp; LLMs</div><div class="m-tags"><span class="m-tag hi">Anthropic Claude</span><span class="m-tag hi">Prompt Engineering</span><span class="m-tag hi">Vision API</span><span class="m-tag hi">LLMs</span></div></div><div class="ms"><div class="ms-title">Desarrollo</div><div class="m-tags"><span class="m-tag">Python</span><span class="m-tag">PyQt6</span><span class="m-tag">HTML5</span><span class="m-tag">JavaScript</span><span class="m-tag">SQLite</span><span class="m-tag">IndexedDB</span></div></div><div class="ms"><div class="ms-title">Sistemas &amp; ERP</div><div class="m-tags"><span class="m-tag">SAP MM</span><span class="m-tag">ERP NEO</span><span class="m-tag">EDI EDICOM</span><span class="m-tag">Office 365</span><span class="m-tag">Linux</span></div></div>'
   },
-  form:{
-    title:'Formación & Idiomas',
-    sub:'Académica · Continua · Idiomas',
-    html:`
-<div class="ms">
-  <div class="ms-title">Formación académica</div>
-  <div class="m-edu"><div class="m-edu-t">Técnico Auxiliar Administrativo y Comercial</div><div class="m-edu-c">La Salle · Instituto de Carabanchel, Madrid</div></div>
-</div>
-<div class="ms">
-  <div class="ms-title">Formación continua en IA</div>
-  <div class="m-edu"><div class="m-edu-t">Desarrollo de soluciones con LLMs · Autodidacta</div><div class="m-edu-c">2023 — Presente · Claude API, Prompt Engineering, Python, PyQt6</div></div>
-  <div class="m-edu"><div class="m-edu-t">Proyectos reales en producción</div><div class="m-edu-c">Altrad Plettac Ibérica · Arquitectura de apps con IA</div></div>
-</div>
-<div class="ms">
-  <div class="ms-title">Idiomas</div>
-  <div class="m-lang"><span>Español</span><span class="m-lang-lvl">Nativo</span></div>
-  <div class="m-lang"><span>Inglés</span><span class="m-lang-lvl">Intermedio B1</span></div>
-</div>`
+  form: {
+    title: 'Formacion &amp; Idiomas',
+    sub: 'Academica &middot; Continua &middot; Idiomas',
+    body: '<div class="ms"><div class="ms-title">Formacion academica</div><div class="m-edu"><div class="m-edu-t">Tecnico Auxiliar Administrativo y Comercial</div><div class="m-edu-c">La Salle &middot; Instituto de Carabanchel, Madrid</div></div></div><div class="ms"><div class="ms-title">Formacion continua en IA</div><div class="m-edu"><div class="m-edu-t">Desarrollo de soluciones con LLMs &middot; Autodidacta</div><div class="m-edu-c">Enero 2023 &mdash; Enero 2026 &middot; Claude API, Prompt Engineering, Python, PyQt6</div></div><div class="m-edu"><div class="m-edu-t">Proyectos reales en produccion</div><div class="m-edu-c">Altrad Plettac Iberica &middot; Arquitectura de apps con IA</div></div></div><div class="ms"><div class="ms-title">Idiomas</div><div class="m-lang"><span>Espanol</span><span class="m-lang-lvl">Nativo</span></div><div class="m-lang"><span>Ingles</span><span class="m-lang-lvl">Intermedio B1</span></div></div>'
   },
-  hobbies:{
-    title:'Intereses & Aficiones',
-    sub:'Fuera del trabajo · Pasiones personales',
-    html:`
-<div class="ms">
-  <div class="ms-title">Lo que me apasiona</div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:16px;margin-top:4px;">
-    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;">
-      <svg width="52" height="52" viewBox="0 0 36 36"><g fill="none" stroke="#00d4ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="20" rx="10" ry="8" fill="rgba(0,212,255,0.07)"/><circle cx="18" cy="11" r="6" fill="rgba(0,212,255,0.07)"/><path d="M13 8 Q11 4 9 6"/><path d="M23 8 Q25 4 27 6"/><line x1="14" y1="14" x2="10" y2="16"/><line x1="22" y1="14" x2="26" y2="16"/><ellipse cx="15.5" cy="12" rx="1.2" ry="1.4"/><ellipse cx="20.5" cy="12" rx="1.2" ry="1.4"/><ellipse cx="18" cy="15" rx="3" ry="1.8" fill="rgba(0,212,255,0.1)"/><path d="M11 22 Q9 28 10 30"/><path d="M25 22 Q27 28 26 30"/><path d="M15 28 Q15 32 13 33"/><path d="M21 28 Q21 32 23 33"/></g></svg>
-      <span style="font-size:0.78rem;color:#c9d1d9;text-align:center;">Mi Schnauzer</span>
-    </div>
-    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;">
-      <svg width="52" height="52" viewBox="0 0 36 36"><g fill="none" stroke="#00d4ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="18,4 32,30 4,30" fill="rgba(0,212,255,0.07)"/><polygon points="18,4 23,14 13,14" fill="rgba(0,212,255,0.18)"/><line x1="4" y1="30" x2="32" y2="30"/></g></svg>
-      <span style="font-size:0.78rem;color:#c9d1d9;text-align:center;">Montaña</span>
-    </div>
-    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;">
-      <svg width="52" height="52" viewBox="0 0 36 36"><g fill="none" stroke="#00d4ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="6" r="3.5"/><path d="M18 10 L16 20 L12 29"/><path d="M18 10 L20 20 L24 29"/><path d="M16 15 L11 19"/><path d="M18 15 L23 19"/></g></svg>
-      <span style="font-size:0.78rem;color:#c9d1d9;text-align:center;">Senderismo</span>
-    </div>
-    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;">
-      <svg width="52" height="52" viewBox="0 0 36 36"><g fill="none" stroke="#00d4ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="4" width="16" height="18" rx="8" fill="rgba(0,212,255,0.07)"/><line x1="18" y1="22" x2="18" y2="32"/><line x1="14" y1="10" x2="22" y2="10"/><line x1="14" y1="14" x2="22" y2="14"/><line x1="14" y1="18" x2="22" y2="18"/></g></svg>
-      <span style="font-size:0.78rem;color:#c9d1d9;text-align:center;">Pádel</span>
-    </div>
-    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;">
-      <svg width="52" height="52" viewBox="0 0 36 36"><g fill="none" stroke="#7c3aed" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="13" rx="9" ry="11" fill="rgba(124,58,237,0.07)"/><line x1="18" y1="24" x2="18" y2="33"/><line x1="12" y1="8" x2="24" y2="18"/><line x1="24" y1="8" x2="12" y2="18"/><line x1="10" y1="13" x2="26" y2="13"/><line x1="18" y1="2" x2="18" y2="24"/></g></svg>
-      <span style="font-size:0.78rem;color:#c9d1d9;text-align:center;">Tenis</span>
-    </div>
-    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;">
-      <svg width="52" height="52" viewBox="0 0 36 36"><g fill="none" stroke="#00d4ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 27 L14 10 L28 7 L28 24"/><circle cx="11" cy="27" r="3.5" fill="rgba(0,212,255,0.15)"/><circle cx="25" cy="24" r="3.5" fill="rgba(0,212,255,0.15)"/><line x1="14" y1="16" x2="28" y2="13"/></g></svg>
-      <span style="font-size:0.78rem;color:#c9d1d9;text-align:center;">Música</span>
-    </div>
-    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;">
-      <svg width="52" height="52" viewBox="0 0 36 36"><g fill="none" stroke="#7c3aed" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="28" height="20" rx="2" fill="rgba(124,58,237,0.07)"/><polygon points="14,13 14,23 24,18" fill="rgba(124,58,237,0.22)" stroke="#7c3aed"/><line x1="4" y1="12" x2="8" y2="8"/><line x1="12" y1="12" x2="16" y2="8"/><line x1="20" y1="12" x2="24" y2="8"/><line x1="28" y1="12" x2="32" y2="8"/></g></svg>
-      <span style="font-size:0.78rem;color:#c9d1d9;text-align:center;">Cine</span>
-    </div>
-  </div>
-</div>`
+  hobbies: {
+    title: 'Intereses &amp; Aficiones',
+    sub: 'Fuera del trabajo &middot; Pasiones personales',
+    body: '<div class="ms"><div class="ms-title">Lo que me apasiona</div><div class="hobby-grid"><div class="hobby-item"><svg width="52" height="52" viewBox="0 0 36 36"><g fill="none" stroke="#00d4ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="20" rx="10" ry="8" fill="rgba(0,212,255,0.07)"/><circle cx="18" cy="11" r="6" fill="rgba(0,212,255,0.07)"/><path d="M13 8 Q11 4 9 6"/><path d="M23 8 Q25 4 27 6"/><line x1="14" y1="14" x2="10" y2="16"/><line x1="22" y1="14" x2="26" y2="16"/><ellipse cx="15.5" cy="12" rx="1.2" ry="1.4"/><ellipse cx="20.5" cy="12" rx="1.2" ry="1.4"/><path d="M11 22 Q9 28 10 30"/><path d="M25 22 Q27 28 26 30"/><path d="M15 28 Q15 32 13 33"/><path d="M21 28 Q21 32 23 33"/></g></svg><span class="hobby-label">Mi Schnauzer</span></div><div class="hobby-item"><svg width="52" height="52" viewBox="0 0 36 36"><g fill="none" stroke="#00d4ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="18,4 32,30 4,30" fill="rgba(0,212,255,0.07)"/><polygon points="18,4 23,14 13,14" fill="rgba(0,212,255,0.18)"/><line x1="4" y1="30" x2="32" y2="30"/></g></svg><span class="hobby-label">Montana</span></div><div class="hobby-item"><svg width="52" height="52" viewBox="0 0 36 36"><g fill="none" stroke="#00d4ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="6" r="3.5"/><path d="M18 10 L16 20 L12 29"/><path d="M18 10 L20 20 L24 29"/><path d="M16 15 L11 19"/><path d="M18 15 L23 19"/></g></svg><span class="hobby-label">Senderismo</span></div><div class="hobby-item"><svg width="52" height="52" viewBox="0 0 36 36"><g fill="none" stroke="#00d4ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="4" width="16" height="18" rx="8" fill="rgba(0,212,255,0.07)"/><line x1="18" y1="22" x2="18" y2="32"/><line x1="14" y1="10" x2="22" y2="10"/><line x1="14" y1="14" x2="22" y2="14"/><line x1="14" y1="18" x2="22" y2="18"/></g></svg><span class="hobby-label">Padel</span></div><div class="hobby-item"><svg width="52" height="52" viewBox="0 0 36 36"><g fill="none" stroke="#7c3aed" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="13" rx="9" ry="11" fill="rgba(124,58,237,0.07)"/><line x1="18" y1="24" x2="18" y2="33"/><line x1="12" y1="8" x2="24" y2="18"/><line x1="24" y1="8" x2="12" y2="18"/><line x1="10" y1="13" x2="26" y2="13"/><line x1="18" y1="2" x2="18" y2="24"/></g></svg><span class="hobby-label">Tenis</span></div><div class="hobby-item"><svg width="52" height="52" viewBox="0 0 36 36"><g fill="none" stroke="#00d4ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 27 L14 10 L28 7 L28 24"/><circle cx="11" cy="27" r="3.5" fill="rgba(0,212,255,0.15)"/><circle cx="25" cy="24" r="3.5" fill="rgba(0,212,255,0.15)"/><line x1="14" y1="16" x2="28" y2="13"/></g></svg><span class="hobby-label">Musica</span></div><div class="hobby-item"><svg width="52" height="52" viewBox="0 0 36 36"><g fill="none" stroke="#7c3aed" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="28" height="20" rx="2" fill="rgba(124,58,237,0.07)"/><polygon points="14,13 14,23 24,18" fill="rgba(124,58,237,0.2)"/><line x1="4" y1="12" x2="8" y2="8"/><line x1="12" y1="12" x2="16" y2="8"/><line x1="20" y1="12" x2="24" y2="8"/><line x1="28" y1="12" x2="32" y2="8"/></g></svg><span class="hobby-label">Cine</span></div></div></div>'
   }
 };
 
-function openModal(id){
-  const m=M[id]; if(!m) return;
-  document.getElementById('modal-content').innerHTML=
-    `<div class="modal-title">${m.title}</div><div class="modal-sub">${m.sub}</div>${m.html}`;
-  document.getElementById('modal-overlay').classList.add('open');
-  document.body.style.overflow='hidden';
-  setTimeout(()=>{
-    document.querySelectorAll('.sb-fill').forEach(b=>b.style.width=b.dataset.w+'%');
-  },120);
-}
-function closeModal(){
-  document.getElementById('modal-overlay').classList.remove('open');
-  document.body.style.overflow='';
-}
-function closeOut(e){if(e.target===document.getElementById('modal-overlay'))closeModal();}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+// CARDS
+var cardMap = {
+  'c-ia':'ia','c-exp':'exp','c-skills':'skills','c-form':'form','c-hobbies':'hobbies'
+};
+Object.keys(cardMap).forEach(function(id) {
+  var el = document.getElementById(id);
+  if (el) el.addEventListener('click', function() { openModal(cardMap[id]); });
+});
 
-// ===== TRANSFORMACIÓN =====
-function startTransform(){
-  const overlay=document.getElementById('glitch-overlay');
-  const canvas=document.getElementById('glitch-canvas');
-  const txt=document.getElementById('glitch-text');
-  const before=document.getElementById('phase-before');
-  overlay.style.display='block';
-  txt.style.display='block';
-  const ctx=canvas.getContext('2d');
-  canvas.width=window.innerWidth; canvas.height=window.innerHeight;
-  const msgs=['ANALIZANDO PERFIL...','DETECTANDO SKILLS IA...','POTENCIANDO CON IA...','TRANSFORMACIÓN COMPLETA ✦'];
-  let mi=0; txt.textContent=msgs[0];
-  const mi_=setInterval(()=>{mi=Math.min(mi+1,msgs.length-1);txt.textContent=msgs[mi];},650);
-  const t0=performance.now();
-  const DUR=2600;
-  document.body.style.overflow='hidden';
-  function frame(now){
-    const p=Math.min((now-t0)/DUR,1);
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.fillStyle=`rgba(13,17,23,${p*0.98})`;
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-    if(p>0.08&&p<0.88){
-      const sl=Math.floor(p*20);
-      for(let i=0;i<sl;i++){
-        const y=Math.random()*canvas.height;
-        const h=Math.random()*7+1;
-        const dx=(Math.random()-0.5)*50*p;
-        ctx.fillStyle=`rgba(0,212,255,${Math.random()*0.12})`;
-        ctx.fillRect(dx,y,canvas.width,h);
+// MODAL
+function openModal(id) {
+  var d = modalData[id];
+  if (!d) return;
+  document.getElementById('modal-content').innerHTML =
+    '<div class="modal-title">' + d.title + '</div>' +
+    '<div class="modal-sub">' + d.sub + '</div>' +
+    d.body;
+  document.getElementById('modal-overlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  setTimeout(function() {
+    document.querySelectorAll('.sb-fill').forEach(function(b) {
+      b.style.width = b.getAttribute('data-w') + '%';
+    });
+  }, 120);
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+document.getElementById('modal-overlay').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+
+// TRANSFORMACION
+function startTransform() {
+  var overlay = document.getElementById('glitch-overlay');
+  var canvas  = document.getElementById('glitch-canvas');
+  var txt     = document.getElementById('glitch-text');
+  var before  = document.getElementById('phase-before');
+  var after   = document.getElementById('phase-after');
+
+  overlay.style.display = 'block';
+  txt.style.display = 'block';
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+  var ctx = canvas.getContext('2d');
+
+  var msgs = ['ANALIZANDO PERFIL...','DETECTANDO SKILLS IA...','POTENCIANDO CON IA...','TRANSFORMACION COMPLETA'];
+  var mi = 0;
+  txt.textContent = msgs[0];
+  var mInt = setInterval(function() {
+    mi = Math.min(mi + 1, msgs.length - 1);
+    txt.textContent = msgs[mi];
+  }, 650);
+
+  var t0 = performance.now();
+  var DUR = 2600;
+  document.body.style.overflow = 'hidden';
+
+  function frame(now) {
+    var p = Math.min((now - t0) / DUR, 1);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'rgba(13,17,23,' + (p * 0.98) + ')';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    if (p > 0.08 && p < 0.88) {
+      var sl = Math.floor(p * 20);
+      for (var i = 0; i < sl; i++) {
+        var y  = Math.random() * canvas.height;
+        var h  = Math.random() * 7 + 1;
+        var dx = (Math.random() - 0.5) * 50 * p;
+        ctx.fillStyle = 'rgba(0,212,255,' + (Math.random() * 0.12) + ')';
+        ctx.fillRect(dx, y, canvas.width, h);
       }
     }
-    if(p>0.18){
-      const n=Math.floor(p*70);
-      for(let i=0;i<n;i++){
+    if (p > 0.18) {
+      var n = Math.floor(p * 70);
+      for (var j = 0; j < n; j++) {
         ctx.beginPath();
-        ctx.arc(Math.random()*canvas.width,Math.random()*canvas.height,Math.random()*2+0.3,0,Math.PI*2);
-        ctx.fillStyle=Math.random()>0.5?`rgba(0,212,255,${Math.random()*0.9})`:`rgba(124,58,237,${Math.random()*0.7})`;
+        ctx.arc(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 2 + 0.3, 0, Math.PI * 2);
+        ctx.fillStyle = Math.random() > 0.5
+          ? 'rgba(0,212,255,' + (Math.random() * 0.9) + ')'
+          : 'rgba(124,58,237,' + (Math.random() * 0.7) + ')';
         ctx.fill();
       }
     }
-    if(p>0.32){
-      ctx.font=`${11+Math.floor(p*3)}px monospace`;
-      const lines=['function transformCV() {','  model: "claude-sonnet"','  prompt_engineering: true','  skills_detected: [LLMs, API]','  > TRANSFORMATION COMPLETE'];
-      lines.forEach((l,i)=>{
-        ctx.fillStyle=`rgba(0,212,255,${p*0.25})`;
-        ctx.fillText(l,60+Math.random()*20,90+i*36+Math.random()*6);
-      });
+    if (p > 0.32) {
+      ctx.font = (11 + Math.floor(p * 3)) + 'px monospace';
+      var lines = ['function transformCV() {','  model: claude-sonnet','  prompt_engineering: true','  skills_detected: LLMs, API','  > TRANSFORMATION COMPLETE'];
+      for (var k = 0; k < lines.length; k++) {
+        ctx.fillStyle = 'rgba(0,212,255,' + (p * 0.25) + ')';
+        ctx.fillText(lines[k], 60 + Math.random() * 20, 90 + k * 36 + Math.random() * 6);
+      }
     }
-    if(p>0.86){
-      ctx.fillStyle=`rgba(0,212,255,${(p-0.86)/0.14*0.35})`;
-      ctx.fillRect(0,0,canvas.width,canvas.height);
+    if (p > 0.86) {
+      ctx.fillStyle = 'rgba(0,212,255,' + ((p - 0.86) / 0.14 * 0.35) + ')';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
-    if(p<1){requestAnimationFrame(frame);}
-    else{
-      clearInterval(mi_);
-      setTimeout(()=>{
-        overlay.style.display='none';
-        before.style.display='none';
-        const after=doc
+    if (p < 1) {
+      requestAnimationFrame(frame);
+    } else {
+      clearInterval(mInt);
+      setTimeout(function() {
+        overlay.style.display = 'none';
+        before.style.display  = 'none';
+        after.style.display   = 'block';
+        window.scrollTo(0, 0);
+        document.body.style.overflow = '';
+      }, 180);
+    }
+  }
+  requestAnimationFrame(frame);
+}
+
+document.getElementById('btn-main').addEventListener('click', startTransform);
+setTimeout(startTransform, 1500);
+
+})();
+</script>
+</body>
+</html>
