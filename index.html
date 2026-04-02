@@ -212,7 +212,7 @@ body{font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
 .m-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
 .m-tag{font-size:0.74rem;padding:4px 9px;border-radius:20px;background:var(--tag-bg);border:1px solid var(--tag-border);color:#c9d1d9;}
 .m-tag.hi{background:rgba(0,212,255,0.12);border-color:rgba(0,212,255,0.4);color:var(--accent);font-weight:500;}
-.m-lang{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:0.82rem;}
+.m-lang{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:0.82rem;color:#c9d1d9;}
 .m-lang:last-child{border-bottom:none;}
 .m-lang-lvl{font-size:0.7rem;color:var(--accent);background:var(--tag-bg);border:1px solid var(--tag-border);padding:2px 8px;border-radius:10px;}
 .m-edu{padding:11px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;margin-bottom:7px;}
@@ -223,6 +223,33 @@ body{font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
 .hobby-label{font-size:0.74rem;color:#c9d1d9;text-align:center;}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== ANILLO DE PROGRESO DEL CENTRO ===== */
+.wheel-center{transition:box-shadow 0.6s ease;}
+.wheel-center.wc-complete{
+  cursor:pointer;
+  animation:centerPulse 1.8s ease-in-out infinite;
+}
+@keyframes centerPulse{
+  0%,100%{box-shadow:0 0 30px rgba(0,212,255,0.3),0 0 60px rgba(0,212,255,0.1);}
+  50%{box-shadow:0 0 60px rgba(0,212,255,0.65),0 0 120px rgba(0,212,255,0.25);}
+}
+#wc-progress-svg{
+  position:absolute;inset:-10px;width:calc(100% + 20px);height:calc(100% + 20px);
+  pointer-events:none;overflow:visible;
+}
+.wc-seg{
+  fill:none;stroke-width:3.5;stroke-linecap:round;
+  stroke:rgba(0,212,255,0.12);
+  transition:stroke 0.5s ease, filter 0.5s ease;
+}
+.wc-seg.lit{
+  stroke:var(--accent);
+  filter:drop-shadow(0 0 5px rgba(0,212,255,0.9));
+}
+#wc-sub{transition:color 0.4s ease;}
+.wheel-center.wc-complete #wc-sub{color:#fff;font-weight:500;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
 @media(max-width:600px){
   .after-header{grid-template-columns:1fr;}
   .after-cb{align-items:flex-start;}
@@ -297,7 +324,7 @@ body{font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
     <header class="after-header">
       <div>
         <div class="after-name">Fuencisla<br><span>Arias</span></div>
-        <div class="after-role">Functional <span>AI</span> Specialist &middot; AI Analyst</div>
+        <div class="after-role">Functional <span>AI</span> Developer &middot; AI Automation</div>
       </div>
       <div class="after-cb">
         <div class="ci"><div class="ci-ico">&#128205;</div>Sant Pere Molanta, Barcelona</div>
@@ -334,7 +361,7 @@ body{font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
       </svg>
       <div class="hero-t">
         <div class="hero-tagline">Mas de 30 anos de experiencia humana.<br><em>Ahora potenciada con IA.</em></div>
-        <div class="hero-sub">Perfil hibrido tecnico-funcional especializada en LLMs y desarrollo real con Claude API. Pulsa cualquier seccion de la ruleta para explorar mi CV.</div>
+        <div class="hero-sub">Perfil h&iacute;brido tecnico-funcional especializada en LLMs y desarrollo real con Claude API. Base t&eacute;cnica forjada testeando dos ERP completos en paralelo y dando soporte directo a usuarios finales &mdash; lo que hoy se traduce en herramientas s&oacute;lidas, funcionales y pensadas desde la experiencia real. Pulsa cualquier secci&oacute;n de la ruleta para explorar mi CV.</div>
       </div>
     </div>
 
@@ -345,12 +372,26 @@ body{font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
         <div class="wheel-ring"></div>
         <div class="wheel-ring-2"></div>
         <div class="wheel-center" id="wheel-center">
+          <svg id="wc-progress-svg" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+            <!-- 5 arcos de 64° con 8° de separacion, radio 66, centro 70,70 -->
+            <!-- seg-0: -90° → -26° -->
+            <path id="wc-seg-0" class="wc-seg" d="M 70,4 A 66,66 0 0,1 129.32,41.07"/>
+            <!-- seg-1: -18° → 46° -->
+            <path id="wc-seg-1" class="wc-seg" d="M 132.77,49.60 A 66,66 0 0,1 115.85,117.48"/>
+            <!-- seg-2: 54° → 118° -->
+            <path id="wc-seg-2" class="wc-seg" d="M 108.79,123.40 A 66,66 0 0,1 39.02,128.27"/>
+            <!-- seg-3: 126° → 190° -->
+            <path id="wc-seg-3" class="wc-seg" d="M 31.21,123.40 A 66,66 0 0,1 5.00,58.54"/>
+            <!-- seg-4: 198° → 262° -->
+            <path id="wc-seg-4" class="wc-seg" d="M 7.23,49.60 A 66,66 0 0,1 60.81,4.64"/>
+          </svg>
           <div class="wheel-center-name" id="wc-name">Fuencisla<br>Arias</div>
-          <div class="wheel-center-sub" id="wc-sub">AI Specialist</div>
+          <div class="wheel-center-sub" id="wc-sub">0 / 5</div>
         </div>
 
       </div>
     </div>
+
 
   </div>
 </div>
@@ -422,7 +463,12 @@ var modalData = {
   form:{
     title:'Formacion &amp; Idiomas',
     sub:'Academica &middot; Continua &middot; Idiomas',
-    body:'<div class="ms"><div class="ms-title">Formacion academica</div><div class="m-edu"><div class="m-edu-t">Tecnico Auxiliar Administrativo y Comercial</div><div class="m-edu-c">La Salle &middot; Instituto de Carabanchel, Madrid</div></div></div><div class="ms"><div class="ms-title">Formacion continua en IA</div><div class="m-edu"><div class="m-edu-t">Desarrollo de soluciones con LLMs &middot; Autodidacta</div><div class="m-edu-c">2023 &mdash; Presente &middot; Claude API, Prompt Engineering, Python</div></div><div class="m-edu"><div class="m-edu-t">Proyectos reales en produccion</div><div class="m-edu-c">Altrad Plettac Iberica &middot; Arquitectura de apps con IA</div></div></div><div class="ms"><div class="ms-title">Idiomas</div><div class="m-lang"><span>Espanol</span><span class="m-lang-lvl">Nativo</span></div><div class="m-lang"><span>Ingles</span><span class="m-lang-lvl">Intermedio B1</span></div></div>'
+    body:'<div class="ms"><div class="ms-title">Formacion academica</div><div class="m-edu"><div class="m-edu-t">Tecnico Auxiliar Administrativo y Comercial</div><div class="m-edu-c">La Salle &middot; Instituto de Carabanchel, Madrid</div></div></div><div class="ms"><div class="ms-title">Formacion continua en IA</div><div class="m-edu"><div class="m-edu-t">Desarrollo de soluciones con LLMs &middot; Autodidacta</div><div class="m-edu-c">Dic. 2025 &mdash; Presente &middot; Claude API, Prompt Engineering, Python</div></div><div class="m-edu"><div class="m-edu-t">Proyectos reales en produccion</div><div class="m-edu-c">Altrad Plettac Iberica &middot; Arquitectura de apps con IA</div></div></div><div class="ms"><div class="ms-title">Idiomas</div><div class="m-lang"><span>Espanol</span><span class="m-lang-lvl">Nativo</span></div><div class="m-lang"><span>Ingles</span><span class="m-lang-lvl">Intermedio B1</span></div></div>'
+  },
+  carta:{
+    title:'Carta de Presentaci&oacute;n',
+    sub:'Mi historia con la IA &middot; Diciembre 2025',
+    body:'<div class="ms"><div class="ms-title">El origen</div><p style="font-size:0.88rem;color:#8b949e;line-height:1.9;margin-bottom:1em;">Mi relaci&oacute;n con la inteligencia artificial comienza hace apenas <strong style="color:#c9d1d9">cuatro meses</strong>, pero lo que ha ocurrido en ese tiempo ha cambiado por completo mi forma de entender el trabajo y mis propias capacidades.</p><p style="font-size:0.88rem;color:#8b949e;line-height:1.9;margin-bottom:1em;">Todo parti&oacute; de un descubrimiento casi accidental: la revelaci&oacute;n de que era posible <strong style="color:#c9d1d9">desarrollar herramientas propias</strong> sin ser programadora de carrera. Herramientas dise&ntilde;adas espec&iacute;ficamente para resolver esas tareas que, d&iacute;a tras d&iacute;a, consumen tiempo, concentraci&oacute;n y energ&iacute;a en mi puesto de trabajo.</p><p style="font-size:0.88rem;color:#8b949e;line-height:1.9;margin-bottom:1em;">La fascinaci&oacute;n fue inmediata. Ver c&oacute;mo lo que antes era <strong style="color:#c9d1d9">tedioso, repetitivo y manual</strong> pod&iacute;a transformarse en algo automatizado, &aacute;gil y preciso &mdash; construido por m&iacute; misma, para mis propias necesidades &mdash; encendi&oacute; algo que no se ha apagado desde entonces.</p><p style="font-size:0.88rem;color:#8b949e;line-height:1.9;">Hoy sigo aprendiendo cada d&iacute;a, mecanizando procesos, explorando los l&iacute;mites de lo que la IA puede hacer en manos de quien la entiende y la aplica con criterio.</p></div><div class="ms"><div class="ms-title">Una base s&oacute;lida que no viene del c&oacute;digo</div><p style="font-size:0.88rem;color:#8b949e;line-height:1.9;margin-bottom:1em;">Sin formaci&oacute;n formal en programaci&oacute;n, pero con a&ntilde;os ejerciendo como <strong style="color:#c9d1d9">tester de dos ERP complejos en paralelo</strong> y dando soporte directo a los usuarios finales, desarrollo una mirada que muy pocos programadores tienen: saber exactamente d&oacute;nde falla un sistema, por qu&eacute; el usuario se pierde, y qu&eacute; hace que una herramienta sea realmente &uacute;til en el d&iacute;a a d&iacute;a.</p><p style="font-size:0.88rem;color:#8b949e;line-height:1.9;">Esa experiencia es hoy mi mayor ventaja al construir con IA: <strong style="color:#c9d1d9">pienso en casos l&iacute;mite, anticipo errores y dise&ntilde;o para el usuario real</strong>, no para el caso ideal. El resultado son proyectos que funcionan en producci&oacute;n desde el primer d&iacute;a.</p></div><div class="ms"><div class="ms-title">Estado actual</div><div class="m-ai-box"><div class="m-ai-label">&#9679; En activo &mdash; aprendizaje continuo</div><ul class="ml"><li>Inicio: diciembre 2025 &mdash; hace 4 meses</li><li>Del descubrimiento a proyectos reales en producci&oacute;n</li><li>Motivaci&oacute;n: mecanizar y facilitar la rutina diaria de trabajo</li><li>Sin formaci&oacute;n previa en programaci&oacute;n &mdash; 100% autodidacta con IA</li><li>Base t&eacute;cnica: testing de ERP + soporte a usuarios finales</li></ul></div></div>'
   },
   hobbies:{
     title:'Intereses &amp; Aficiones',
@@ -443,11 +489,12 @@ wc.style.height = centerSize + 'px';
 document.getElementById('wc-name').style.fontSize = (isMobile ? '0.7' : '0.85') + 'rem';
 document.getElementById('wc-sub').style.fontSize  = (isMobile ? '0.48' : '0.55') + 'rem';
 
-var cardEls   = [];
-var angle     = -90; // empieza arriba
-var speed     = 0.15;
-var modalOpen = false;
-var visited   = {};
+var cardEls      = [];
+var angle        = -90; // empieza arriba
+var speed        = 0.15;
+var modalOpen    = false;
+var visited      = {};   // id -> true, permanente (no se resetea)
+var visitedCount = 0;    // cuantos distintos se han abierto
 
 /* Spokes */
 for (var s = 0; s < cardsData.length; s++) {
@@ -473,19 +520,39 @@ cardsData.forEach(function(c, i) {
   el.setAttribute('data-base', (i / cardsData.length) * 360);
   el.addEventListener('click', function(){
     var id = this.getAttribute('data-id');
-    // Marcar como visitado
-    visited[id] = true;
-    this.classList.add('visited-card');
-    // Si todos visitados, resetear
-    if (Object.keys(visited).length >= cardsData.length) {
-      visited = {};
-      cardEls.forEach(function(c){ c.classList.remove('visited-card'); });
+    // Marcar como visitado (permanente)
+    if (!visited[id]) {
+      visited[id] = true;
+      visitedCount++;
+      this.classList.add('visited-card');
+      // Iluminar siguiente segmento del anillo
+      var seg = document.getElementById('wc-seg-' + (visitedCount - 1));
+      if (seg) setTimeout(function(){ seg.classList.add('lit'); }, 80);
+      // Actualizar contador en el centro
+      var subEl = document.getElementById('wc-sub');
+      if (visitedCount < cardsData.length) {
+        subEl.textContent = visitedCount + ' / 5';
+      }
+      // Al completar los 5
+      if (visitedCount >= cardsData.length) {
+        setTimeout(function(){
+          var wc = document.getElementById('wheel-center');
+          wc.classList.add('wc-complete');
+          subEl.textContent = 'Leer carta \u2192';
+        }, 600);
+      }
     }
-    // Siempre abrir modal
     openModal(id);
   });
   wheelOuter.appendChild(el);
   cardEls.push(el);
+});
+
+/* ===== CLICK CENTRO (carta de presentacion) ===== */
+document.getElementById('wheel-center').addEventListener('click', function(){
+  if (this.classList.contains('wc-complete')) {
+    openModal('carta');
+  }
 });
 
 /* ===== HELPER angulo normalizado ===== */
